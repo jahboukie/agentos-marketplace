@@ -1,10 +1,11 @@
 {
-  "name": "agentos",
+  "name": "agentos-cli",
   "version": "1.0.0",
   "description": "AgentOS - The Operating System for AI Development. Multi-agent orchestration with cross-instance memory sharing and 95%+ confidence scoring.",
   "main": "dist/index.js",
   "bin": {
-    "agentos": "dist/public-oasis-cli.js"
+    "agentos": "dist/public-oasis-cli.js",
+    "agent-os": "dist/public-oasis-cli.js"
   },
   "files": [
     "dist/**/*",
