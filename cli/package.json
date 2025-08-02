@@ -1,0 +1,69 @@
+{
+  "name": "agentos",
+  "version": "1.0.0",
+  "description": "AgentOS - The Operating System for AI Development. Multi-agent orchestration with cross-instance memory sharing and 95%+ confidence scoring.",
+  "main": "dist/index.js",
+  "bin": {
+    "agentos": "dist/public-oasis-cli.js"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/agentos-oasis-cli.ts",
+    "test": "jest",
+    "prepublish": "npm run build",
+    "postinstall": "node scripts/welcome.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.3.10",
+    "inquirer": "^9.2.12",
+    "ora": "^6.3.1",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.8",
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.0"
+  },
+  "keywords": [
+    "ai",
+    "artificial-intelligence", 
+    "multi-agent",
+    "claude-code",
+    "developer-tools",
+    "confidence-scoring",
+    "memory-sharing",
+    "agent-orchestration",
+    "agentos",
+    "developer-oasis",
+    "ai-development",
+    "cross-instance-learning"
+  ],
+  "author": "AgentOS Team",
+  "license": "MIT",
+  "homepage": "https://agentos.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agentos/agentos-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agentos/agentos-cli/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux", 
+    "win32"
+  ]
+}

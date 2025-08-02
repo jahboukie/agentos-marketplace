@@ -1,0 +1,137 @@
+{
+  "name": "agentos-vscode",
+  "displayName": "AgentOS - AI Developer Oasis",
+  "description": "Multi-agent orchestration with cross-instance memory sharing. Transform your VS Code into an AI paradise with 95%+ confidence scoring.",
+  "version": "1.0.0",
+  "publisher": "agentos",
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agentos/agentos-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agentos/agentos-vscode/issues"
+  },
+  "homepage": "https://agentos.dev",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "AI",
+    "Machine Learning",
+    "Other",
+    "Snippets",
+    "Debuggers"
+  ],
+  "keywords": [
+    "ai",
+    "artificial-intelligence",
+    "multi-agent",
+    "claude-code",
+    "developer-oasis", 
+    "confidence-scoring",
+    "memory-sharing",
+    "agent-orchestration"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "agentos.initOasis",
+        "title": "🏝️ Initialize Developer Oasis",
+        "category": "AgentOS"
+      },
+      {
+        "command": "agentos.showStatus", 
+        "title": "📊 Show Oasis Status",
+        "category": "AgentOS"
+      },
+      {
+        "command": "agentos.develop",
+        "title": "🚀 Develop with AgentOS",
+        "category": "AgentOS"
+      },
+      {
+        "command": "agentos.showInstances",
+        "title": "🎭 Show Claude Instances",
+        "category": "AgentOS"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "agentosOasis",
+          "name": "🏝️ AgentOS Developer Oasis",
+          "when": "agentos.oasisActive"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "agentos",
+          "title": "AgentOS",
+          "icon": "$(symbol-namespace)"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AgentOS",
+      "properties": {
+        "agentos.enableMesmerizingEffects": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable mesmerizing visual effects in the oasis"
+        },
+        "agentos.confidenceThreshold": {
+          "type": "number",
+          "default": 0.95,
+          "minimum": 0.5,
+          "maximum": 1.0,
+          "description": "Minimum confidence threshold for oasis mode"
+        },
+        "agentos.autoInitOasis": {
+          "type": "boolean", 
+          "default": true,
+          "description": "Automatically initialize oasis when opening workspace"
+        }
+      }
+    },
+    "statusBarItems": [
+      {
+        "id": "agentos.status",
+        "alignment": "left",
+        "priority": 100
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "agentos": "^1.0.0"
+  }
+}

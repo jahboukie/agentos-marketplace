@@ -1,0 +1,54 @@
+# 🔒 AgentOS VS Code Extension - Marketplace Protection
+
+# 🚫 NEVER PUBLISH - Source code
+src/
+tsconfig.json
+webpack.config.js
+
+# 🚫 NEVER PUBLISH - Enterprise Features  
+src/enterprise/
+src/premium/
+src/advanced-analytics/
+src/custom-models/
+
+# 🚫 NEVER PUBLISH - Backend Integration
+src/billing/
+src/subscription-api/
+src/analytics-collection/
+src/telemetry/
+
+# 🚫 NEVER PUBLISH - Development
+test/
+tests/
+*.test.ts
+*.spec.ts
+.vscode/launch.json
+.vscode/tasks.json
+
+# 🚫 NEVER PUBLISH - Configuration
+.env*
+config/secrets*
+config/api-keys*
+
+# 🚫 NEVER PUBLISH - Documentation
+docs/internal/
+docs/enterprise/
+DEVELOPMENT.md
+ARCHITECTURE.md
+
+# Standard exclusions
+node_modules/
+.git/
+.gitignore
+.DS_Store
+*.log
+.eslintrc*
+prettier.config*
+
+# ✅ INCLUDE in extension:
+# - out/ (compiled JavaScript)
+# - package.json
+# - README.md (public)
+# - CHANGELOG.md
+# - assets/ (icons, images)
+# - Basic extension functionality

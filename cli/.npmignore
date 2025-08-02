@@ -1,0 +1,64 @@
+# 🔒 AgentOS CLI - NPM Package Protection
+
+# 🚫 Source files (compiled to dist/)
+src/
+tsconfig.json
+.ts files (except type definitions)
+
+# 🚫 NEVER PUBLISH - Core Secret Sauce
+src/dynamic-confidence-engine.ts
+src/oasis-tier-manager.ts  
+src/developer-oasis.ts
+src/advanced-learning/
+src/enterprise-features/
+src/premium-algorithms/
+
+# 🚫 NEVER PUBLISH - Business Logic
+src/tier-management/premium/
+src/analytics/advanced/
+src/billing-integration/
+src/enterprise-api/
+
+# 🚫 NEVER PUBLISH - Configuration
+.env*
+config/secrets*
+config/premium*
+config/enterprise*
+
+# 🚫 NEVER PUBLISH - Development
+test/
+tests/
+*.test.ts
+*.spec.ts
+coverage/
+.nyc_output/
+
+# 🚫 NEVER PUBLISH - Documentation
+docs/internal/
+docs/business/
+docs/enterprise/
+INTERNAL_README.md
+ENTERPRISE_GUIDE.md
+
+# 🚫 NEVER PUBLISH - Build tools
+webpack.config.js
+rollup.config.js
+.babelrc
+.eslintrc*
+prettier.config.js
+
+# Standard exclusions
+node_modules/
+.git/
+.DS_Store
+.vscode/
+*.log
+.tmp/
+
+# ✅ INCLUDE in NPM package:
+# - dist/ (compiled JavaScript)
+# - README.md (public facing)
+# - package.json 
+# - LICENSE
+# - Basic CLI functionality
+# - Public API interfaces

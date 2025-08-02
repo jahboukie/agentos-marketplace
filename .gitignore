@@ -1,0 +1,62 @@
+# 🔒 AgentOS - Protect the Secret Sauce
+
+# 🚫 NEVER COMMIT - Business Intelligence
+docs/BUSINESS_PLAN.md
+docs/VC_PITCH.md
+docs/FINANCIALS.md
+docs/COMPETITIVE_ANALYSIS.md
+docs/INTERNAL_ROADMAP.md
+
+# 🚫 NEVER COMMIT - Proprietary Algorithms  
+**/dynamic-confidence-engine.ts
+**/oasis-tier-manager.ts
+**/developer-oasis.ts
+**/learning-engine.ts
+**/memory-engine.ts
+**/prediction-algorithms.ts
+
+# 🚫 NEVER COMMIT - Enterprise Features
+**/enterprise/
+**/premium-features/
+**/advanced-analytics/
+**/custom-models/
+
+# 🚫 NEVER COMMIT - Backend Integration
+web-backend/
+**/billing/
+**/subscription-management/
+**/enterprise-api/
+**/analytics-backend/
+
+# 🚫 NEVER COMMIT - Configuration Secrets
+**/.env
+**/.env.local
+**/.env.production
+**/config/secrets.ts
+**/config/api-keys.ts
+
+# 🚫 NEVER COMMIT - Development & Testing
+**/test-data/
+**/performance-benchmarks/
+**/load-testing/
+**/internal-metrics/
+**/.agentos/
+**/oasis-analytics/
+
+# Standard Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.vscode/settings.json
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Runtime
+*.log
+.tmp/
+.cache/
