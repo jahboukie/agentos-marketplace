@@ -4,7 +4,6 @@
   "description": "Multi-agent orchestration with cross-instance memory sharing. Transform your VS Code into an AI paradise with 95%+ confidence scoring.",
   "version": "1.0.0",
   "publisher": "agentos",
-  "icon": "assets/icon.png",
   "galleryBanner": {
     "color": "#1e1e1e",
     "theme": "dark"
@@ -32,7 +31,7 @@
     "artificial-intelligence",
     "multi-agent",
     "claude-code",
-    "developer-oasis", 
+    "developer-oasis",
     "confidence-scoring",
     "memory-sharing",
     "agent-orchestration"
@@ -40,7 +39,7 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "./dist/extension.js",
+  "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
@@ -49,7 +48,7 @@
         "category": "AgentOS"
       },
       {
-        "command": "agentos.showStatus", 
+        "command": "agentos.showStatus",
         "title": "📊 Show Oasis Status",
         "category": "AgentOS"
       },
@@ -94,11 +93,11 @@
           "type": "number",
           "default": 0.95,
           "minimum": 0.5,
-          "maximum": 1.0,
+          "maximum": 1,
           "description": "Minimum confidence threshold for oasis mode"
         },
         "agentos.autoInitOasis": {
-          "type": "boolean", 
+          "type": "boolean",
           "default": true,
           "description": "Automatically initialize oasis when opening workspace"
         }
@@ -119,19 +118,17 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
-    "package": "vsce package"
+    "package": "npx @vscode/vsce package"
   },
   "devDependencies": {
-    "@types/vscode": "^1.80.0",
     "@types/node": "20.x",
+    "@types/vscode": "^1.80.0",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
+    "@vscode/test-electron": "^2.3.4",
+    "@vscode/vsce": "^3.6.0",
     "eslint": "^8.47.0",
     "typescript": "^5.1.6",
-    "@vscode/test-electron": "^2.3.4",
     "vsce": "^2.15.0"
-  },
-  "dependencies": {
-    "agentos": "^1.0.0"
   }
 }
