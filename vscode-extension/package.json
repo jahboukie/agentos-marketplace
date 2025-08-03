@@ -102,14 +102,7 @@
           "description": "Automatically initialize oasis when opening workspace"
         }
       }
-    },
-    "statusBarItems": [
-      {
-        "id": "agentos.status",
-        "alignment": "left",
-        "priority": 100
-      }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
