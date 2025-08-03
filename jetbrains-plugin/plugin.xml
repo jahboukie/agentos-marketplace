@@ -1,0 +1,143 @@
+<idea-plugin>
+    <id>dev.agentos.jetbrains</id>
+    <name>AgentOS - AI Developer Oasis</name>
+    <version>1.0.0</version>
+    <vendor email="support@agentos.dev" url="https://agentos.dev">AgentOS</vendor>
+
+    <description><![CDATA[
+        <h2>🏝️ Transform your JetBrains IDE into an AI paradise!</h2>
+        
+        <p><strong>AgentOS</strong> is the world's first operating system designed specifically for AI coding agents, 
+        bringing multi-agent orchestration and 95%+ confidence scoring directly to your IDE.</p>
+
+        <h3>🌟 Key Features:</h3>
+        <ul>
+            <li><strong>🧠 Persistent Memory</strong> - Cross-session memory sharing between AI instances</li>
+            <li><strong>⚡ Real-time Execution</strong> - Sandboxed code verification in multiple languages</li>
+            <li><strong>🎯 95%+ Confidence</strong> - Advanced ML models for success prediction</li>
+            <li><strong>🎭 Multi-Agent Paradise</strong> - Multiple Claude instances collaborating seamlessly</li>
+            <li><strong>🌴 Developer Oasis Mode</strong> - Unlimited operations in local development</li>
+            <li><strong>📊 Performance Analytics</strong> - Track AI accuracy and improvement over time</li>
+        </ul>
+
+        <h3>🚀 Perfect for:</h3>
+        <ul>
+            <li>IntelliJ IDEA (Ultimate & Community)</li>
+            <li>PyCharm (Professional & Community)</li>
+            <li>WebStorm</li>
+            <li>PhpStorm</li>
+            <li>RubyMine</li>
+            <li>CLion</li>
+            <li>GoLand</li>
+            <li>Rider</li>
+        </ul>
+
+        <p>Experience the future of AI-powered development with persistent intelligence that improves over time!</p>
+        
+        <p><em>🏝️ Welcome to the AgentOS Developer Oasis - Where AI Agents Experience Unlimited Potential!</em></p>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <h3>Version 1.0.0</h3>
+        <ul>
+            <li>🏝️ Initial release with Developer Oasis integration</li>
+            <li>🎭 Multi-agent orchestration support</li>
+            <li>📊 Oasis status monitoring and Claude instance tracking</li>
+            <li>🚀 Direct AgentOS CLI integration</li>
+            <li>🌴 Automatic oasis initialization</li>
+            <li>⚡ Real-time development assistance</li>
+        </ul>
+    ]]></change-notes>
+
+    <!-- Plugin compatibility -->
+    <idea-version since-build="223" until-build="241.*"/>
+
+    <!-- Compatible with all JetBrains IDEs -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Tool Window -->
+        <toolWindow 
+            id="AgentOS" 
+            secondary="false" 
+            anchor="right" 
+            icon="/icons/agentos.svg"
+            factoryClass="dev.agentos.jetbrains.toolwindow.AgentOSToolWindowFactory"/>
+
+        <!-- Status Bar Widget -->
+        <statusBarWidgetFactory 
+            id="AgentOSStatusWidget"
+            implementation="dev.agentos.jetbrains.statusbar.AgentOSStatusBarWidgetFactory"
+            order="first"/>
+
+        <!-- Settings -->
+        <applicationConfigurable 
+            parentId="tools" 
+            instance="dev.agentos.jetbrains.settings.AgentOSConfigurable"
+            id="dev.agentos.jetbrains.settings.AgentOSConfigurable"
+            displayName="AgentOS"/>
+
+        <!-- Project Service -->
+        <projectService serviceImplementation="dev.agentos.jetbrains.services.AgentOSProjectService"/>
+    </extensions>
+
+    <actions>
+        <!-- Main Menu Group -->
+        <group id="AgentOSActionGroup" text="AgentOS" description="AgentOS Developer Oasis Actions" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            
+            <action id="InitializeOasis" 
+                    class="dev.agentos.jetbrains.actions.InitializeOasisAction" 
+                    text="🏝️ Initialize Developer Oasis" 
+                    description="Initialize AgentOS Developer Oasis in this project"
+                    icon="/icons/oasis.svg"/>
+                    
+            <action id="ShowOasisStatus" 
+                    class="dev.agentos.jetbrains.actions.ShowOasisStatusAction" 
+                    text="📊 Show Oasis Status" 
+                    description="Display current oasis status and Claude instances"
+                    icon="/icons/status.svg"/>
+                    
+            <action id="DevelopWithAgentOS" 
+                    class="dev.agentos.jetbrains.actions.DevelopWithAgentOSAction" 
+                    text="🚀 Develop with AgentOS" 
+                    description="Start AI-assisted development task"
+                    icon="/icons/develop.svg"/>
+                    
+            <action id="ShowClaudeInstances" 
+                    class="dev.agentos.jetbrains.actions.ShowClaudeInstancesAction" 
+                    text="🎭 Show Claude Instances" 
+                    description="View all Claude instances in the oasis"
+                    icon="/icons/instances.svg"/>
+
+            <separator/>
+            
+            <action id="OpenAgentOSSettings" 
+                    class="dev.agentos.jetbrains.actions.OpenSettingsAction" 
+                    text="⚙️ AgentOS Settings" 
+                    description="Configure AgentOS plugin settings"/>
+        </group>
+
+        <!-- Context Menu Actions -->
+        <group id="AgentOSEditorPopup" text="AgentOS">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <separator/>
+            <reference ref="DevelopWithAgentOS"/>
+        </group>
+
+        <!-- Toolbar Actions -->
+        <action id="QuickOasisStatus" 
+                class="dev.agentos.jetbrains.actions.QuickOasisStatusAction" 
+                text="🏝️ AgentOS" 
+                description="Quick access to AgentOS oasis status"
+                icon="/icons/agentos_small.svg">
+            <add-to-group group-id="MainToolBar" anchor="last"/>
+        </action>
+    </actions>
+
+    <project-components>
+        <component>
+            <implementation-class>dev.agentos.jetbrains.components.AgentOSProjectComponent</implementation-class>
+        </component>
+    </project-components>
+</idea-plugin>
