@@ -3,7 +3,7 @@
   "displayName": "AgentOS - AI Developer Oasis",
   "description": "Multi-agent orchestration with cross-instance memory sharing. Transform your VS Code into an AI paradise with 95%+ confidence scoring.",
   "version": "1.0.0",
-  "publisher": "agentos",
+  "publisher": "JeremyBrown",
   "galleryBanner": {
     "color": "#1e1e1e",
     "theme": "dark"
